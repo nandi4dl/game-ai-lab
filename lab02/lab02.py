@@ -20,6 +20,11 @@ import itertools
 
 def best_hand(hand):
     "From a 7-card hand, return the best 5 card hand."
+    handcombos=list( itertools.combinations(hand, 5))
+    handcomborank=[]
+    for combo in handcombos:
+        handcomborank.append(hand_rank(combo))
+    return handcombos[handcomborank.index(max(handcomborank))]
     # Your code here
     pass
     
@@ -94,6 +99,8 @@ def best_hand_try():
     assert (sorted(best_hand("JD TC TH 7C 7D 7S 7H".split()))
             == ['7C', '7D', '7H', '7S', 'JD'])
     return 'test_best_hand passes'
+
+
 
 if __name__ == '__main__':
   print(best_hand_try())
