@@ -124,6 +124,8 @@ def retrieve_context(collection: chromadb.Collection, query: str, n_results: int
          n_results=n_results
 
     )
+    
+    
 
 
 
